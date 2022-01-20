@@ -1,0 +1,85 @@
+@layout('layout.app')
+
+@section('content')
+    <h1>Novo Animal</h1>
+        <form action="{{route('animals.store')}}" method="POST">
+            <div class="row">
+                <div class="mb-2 col">
+                    <label class="form-label" for="name">Nome</label>
+                    <input class="form-control mb-2" type="text" name="name" id="name">
+                </div>
+                <div class="mb-2 col">
+                    <label class="form-label" for="description">Descrição</label>
+                    <input class="form-control mb-2" type="text" name="description" id="description">
+                </div>
+                <div class="mb-2 col">
+                    <div class="row">
+                        <label class="form-label" for="type">Tipo</label>
+                        <select style="height: 39px" class="form-select " name="type" id="type" required>
+                            <option disabled selected>Selecione um tipo de animal...</option>
+                            <option value="dog"> Cão </option>
+                            <option value="cat"> Gato </option>
+                            <option value="bird"> Ave </option>
+                            <option value="other"> Outro </option>
+                        </select>
+                    </div>
+                </div>   
+            </div >
+
+            <div class="row">
+                <div class="mb-2 col">
+                    <label class="form-label" for="age">Idade</label>
+                    <input class="form-control mb-2" type="text" name="age" id="age">
+                </div>
+                
+                <div class="mb-2 col">
+                    <label class="form-label" for="breed">Raça</label>
+                    <input class="form-control mb-2" type="text" name="breed" id="breed">
+                </div>
+                <div class="mb-2 col">
+                    <div class="row">
+                        <label class="form-label" for="size">Porte</label>
+                        <select style="height: 39px" class="form-select" name="size" id="size" required>
+                            <option disabled selected>Selecione um tipo de animal...</option>
+                            <option value="small"> Pequeno </option>
+                            <option value="medium"> Médio </option>
+                            <option value="big"> Grande </option>
+                            <option value="other"> Outro </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="mb-2 col">
+                    <label class="form-label" for="primaryContact">Contato Primário</label>
+                    <input class="form-control mb-2" type="text" name="primaryContact" id="primaryContact">
+                </div>
+                <div class="mb-2 col">
+                    <label class="form-label" for="secondaryContact">Contato Secundário</label>
+                    <input class="form-control mb-2" type="text" name="secondaryContact" id="secondaryContact">
+                </div>
+            </div>
+
+  
+            <div class="d-flex justify-content-around">
+                <div class="row">
+                    <div class="mb-2 col">
+                        <label class="form-label" for="adoption">Buscando Adoção</label>
+                        <input class="form-control mb-2" type="checkbox" id="adoption", name="adoption", value="adoptable">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-2 col">
+                        <label class="form-label" for="help">Buscando Ajuda</label>
+                        <input class="form-control mb-2" type="checkbox" id="help", name="help", value="help">
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <button class="btn btn-primary" type='submit'>Cadastrar</button>
+            </div>
+                
+        </form>
+@endsection
